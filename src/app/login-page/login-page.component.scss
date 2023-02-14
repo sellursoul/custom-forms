@@ -1,0 +1,35 @@
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: .4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+.btn_block {
+  display: flex;
+  justify-content: space-between;
+}
+.alert-danger {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #dc3545;
+  color: #f4f4f4;
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+  padding: .2rem;
+}
+.alert-info {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #cccccc;
+  color: #333333;
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+  padding: .2rem;
+}
