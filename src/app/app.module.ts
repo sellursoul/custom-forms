@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import {HttpClientModule} from "@angular/common/http";
 import {MainLayoutComponent} from "./shared/main-layout/main-layout.component";
+import {CreateAccountPageComponent} from "./login-page/create-account-page/create-account-page.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {MainLayoutComponent} from "./shared/main-layout/main-layout.component";
     LoginPageComponent,
     HomePageComponent,
     FormBuilderComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    CreateAccountPageComponent
   ],
   imports: [
     BrowserModule,

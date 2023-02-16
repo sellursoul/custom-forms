@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {environment} from "../../shared/environment";
 import {AuthResponse, User} from "../../shared/interfaces";
-import {catchError, Observable, of, Subject, tap, throwError} from "rxjs";
+import {catchError, Observable, Subject, tap, throwError} from "rxjs";
 
 @Injectable({providedIn: 'root'})
 
@@ -34,17 +34,12 @@ export class AuthService {
 
   private handleError(error: HttpErrorResponse) {
     const {message} = error.error.error
-    switch (message) {
-      case 'INVALID_EMAIL':
-        this.error$.next('Invalid email or password')
-        break
-      case 'INVALID_PASSWORD':
-        this.error$.next('Invalid email or password')
-        break
-      case 'EMAIL_NOT_FOUND':
-        this.error$.next('User doesn`t exist')
-        break
+    const errorMessages = {
+      INVALID_EMAIL: 'The email address is already in use by another account',
+      INVALID_PASSWORD: 'Password sign-in is disabled for this project.',
+      EMAIL_NOT_FOUND:'We have blocked all requests from this device due to unusual activity. Try again later.'
     }
+    this.error$.next(errorMessages[message]);
     return throwError(error)
   }
 

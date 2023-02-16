@@ -3,6 +3,7 @@ import {PreloadAllModules, RouterModule, Routes} from "@angular/router";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {LoginPageComponent} from "./login-page/login-page.component";
 import {MainLayoutComponent} from "./shared/main-layout/main-layout.component";
+import {CreateAccountPageComponent} from "./login-page/create-account-page/create-account-page.component";
 
 const routes: Routes = [
   {path:'', component: MainLayoutComponent, children:[
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'authorized',
     loadChildren: () => import('./authorized/authorized.module').then(m => m.AuthorizedModule)},
   {path: 'login', component: LoginPageComponent},
+  {path: 'signup', component: CreateAccountPageComponent},
   {path: '**', redirectTo:'/'}
 ]
 @NgModule({

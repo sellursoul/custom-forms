@@ -11,7 +11,7 @@ import {AuthService} from "./services/auth.service";
 })
 export class LoginPageComponent implements OnInit {
 
-  form: any
+  form: FormGroup
   submitted = false
   message: string
 
