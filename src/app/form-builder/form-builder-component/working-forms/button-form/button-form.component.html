@@ -1,0 +1,10 @@
+<form class="button-form">
+  <button type="{{item.inputType}}" cdkDragBoundary=".button-form" cdkDrag mat-fab extended
+          [ngStyle]="
+                  {'font-weight': (buttonStyle$ | ngrxPush)?.fontWeight,
+                  'width.px': (buttonStyle$ | ngrxPush)?.width,
+                  'height.px': (buttonStyle$ | ngrxPush)?.height,
+                  'border-style': (buttonStyle$ | ngrxPush)?.borderStyle,
+                  'background': (buttonStyleColor$ | ngrxPush)
+                  }">{{(buttonStyle$ | ngrxPush)?.placeholder}}</button>
+</form>

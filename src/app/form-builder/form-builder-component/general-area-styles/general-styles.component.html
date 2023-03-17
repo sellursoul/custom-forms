@@ -1,0 +1,38 @@
+<form class="form-control" [formGroup]="generalStylesForm" (ngSubmit)="submit()">
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Border style:</mat-label>
+      <select matNativeControl formControlName="borderStyle">
+        <option value="none">None</option>
+        <option value="solid">Solid</option>
+        <option value="dashed">Dashed</option>
+        <option value="dotted">Dotted</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div formGroupName="color">
+    <h3>Form color:</h3>
+    <div>
+      <label for="red">Red:</label>
+      <input type="range" id="red" formControlName="red" min="0" max="255">
+      {{color.get('red').value}}
+    </div>
+    <div>
+      <label for="blue">Blue:</label>
+      <input type="range" id="blue" formControlName="blue" min="0" max="255">
+      {{color.get('blue').value}}
+    </div>
+    <div>
+      <label for="green">Green:</label>
+      <input type="range" id="green" formControlName="green" min="0" max="255">
+      {{color.get('green').value}}
+    </div>
+  </div>
+
+  <div class="btn-block">
+    <button class="btn" type="submit">Change</button>
+  </div>
+
+</form>

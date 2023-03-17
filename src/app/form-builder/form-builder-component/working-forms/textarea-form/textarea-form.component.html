@@ -1,0 +1,10 @@
+<form class="input-form">
+  <div class="input-full-width">
+            <textarea
+              [placeholder]="(textAreaStyle$ | ngrxPush)?.placeholder"
+              [ngStyle]="
+              {'font-size.px': (textAreaStyle$ | ngrxPush)?.fontSize,
+              'font-weight': (textAreaStyle$ | ngrxPush)?.fontWeight}"
+              [name]="item.inputType"></textarea>
+  </div>
+</form>

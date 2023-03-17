@@ -1,0 +1,44 @@
+<form class="card" [formGroup]="signUpForm" (ngSubmit)="submit()">
+  <h1>Enter the registration data</h1>
+
+  <div class="alert-danger" *ngIf="errorMessage$ | ngrxPush as error">{{error}}</div>
+
+  <div
+    [ngClass]="{invalid: signUpForm.get('email')?.touched && signUpForm.get('email').invalid}"
+    class="form-control">
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email">
+    <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="validation">
+      <small *ngIf="signUpForm.get('email')?.errors.required">Please, enter email</small>
+      <small *ngIf="signUpForm.get('email')?.errors.email">Please, enter correct email</small>
+    </div>
+  </div>
+
+  <div
+    [ngClass]="{invalid: signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid}"
+    class="form-control" >
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password">
+    <div *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid" class="validation">
+      <small *ngIf="signUpForm.get('password')?.errors.required">Please, enter password</small>
+      <small *ngIf="signUpForm.get('password')?.errors.minlength">Minimal password length {{signUpForm.get('password')?.errors.minlength.requiredLength}} symbols</small>
+    </div>
+  </div>
+
+  <div
+    [ngClass]="{invalid: signUpForm.get('repeatPassword')?.touched && signUpForm.get('repeatPassword')?.invalid}"
+    class="form-control">
+    <label for="repeatPassword">Repeat password</label>
+    <input id="repeatPassword" type="password" formControlName="repeatPassword">
+    <div *ngIf="signUpForm.get('repeatPassword')?.touched && signUpForm.get('repeatPassword')?.invalid" class="validation">
+      <small *ngIf="signUpForm.get('repeatPassword')?.errors.required">Please, repeat password</small>
+      <small *ngIf="signUpForm.get('repeatPassword')?.errors.matchValidator">Passwords don`t match</small>
+    </div>
+  </div>
+
+  <div class="btn_block">
+    <button class="btn" routerLink="/">Back</button>
+    <button class="btn" type="submit" [disabled]="signUpForm.invalid" >Sign up</button>
+  </div>
+
+</form>

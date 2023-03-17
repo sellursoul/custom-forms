@@ -1,0 +1,26 @@
+
+.text_Input {
+  width: 100%;
+  padding: .8rem 0 .1rem 0;
+  font-size: .8rem;
+  border: 0;
+  margin-top: .4rem;
+}
+
+select {
+  padding: 1rem 0 .3rem 0;
+  border: 0;
+}
+
+.btn-block {
+  margin-top: .8rem;
+  display: flex;
+  justify-content: flex-start;
+
+  .btn {
+    background-color: slateblue;
+    width: 150px;
+    height: 30px;
+    font-size: .8em;
+  }
+}

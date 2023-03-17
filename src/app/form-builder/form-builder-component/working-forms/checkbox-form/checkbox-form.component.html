@@ -1,0 +1,5 @@
+<form class="checkbox-form">
+  <mat-checkbox
+    [ngStyle]="{'font-weight': (checkboxStyle$ | ngrxPush)?.fontWeight}"
+    name="{{item.inputType}}">{{(checkboxStyle$ | ngrxPush)?.placeholder}}</mat-checkbox>
+</form>

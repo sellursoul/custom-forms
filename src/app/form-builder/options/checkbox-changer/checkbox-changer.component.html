@@ -1,0 +1,28 @@
+<form [formGroup]="checkBoxChangerForm" (ngSubmit)="submit()">
+  <div>
+    <mat-form-field>
+      <mat-label>Placeholder text:</mat-label>
+      <input class="text_Input" matInput type="text" placeholder="Write placeholder" formControlName="placeholder">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Font weight:</mat-label>
+      <select matNativeControl formControlName="fontWeight">
+        <option value="normal">Normal</option>
+        <option value="bold">Bold</option>
+        <option value="lighter">Lighter</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-slide-toggle formControlName="required">Required</mat-slide-toggle>
+  </div>
+
+  <div class="btn-block">
+    <button class="btn" type="submit">Change</button>
+  </div>
+
+</form>

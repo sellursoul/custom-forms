@@ -1,0 +1,111 @@
+<form>
+
+  <div class="container">
+    <h2>Options</h2>
+    <ul class="card" [ngSwitch]="value">
+      <li class="form-control" *ngSwitchCase="selectedForm.Input">
+        <app-input-changer [id]="selectedFormId"></app-input-changer>
+      </li>
+      <li class="form-control" *ngSwitchCase="selectedForm.TextArea">
+        <app-textarea-changer [id]="selectedFormId"></app-textarea-changer>
+      </li>
+      <li class="form-control" *ngSwitchCase="selectedForm.Button">
+        <app-button-changer [id]="selectedFormId"></app-button-changer>
+      </li>
+      <li class="form-control" *ngSwitchCase="selectedForm.Checkbox">
+        <app-checkbox-changer [id]="selectedFormId"></app-checkbox-changer>
+      </li>
+      <li class="form-control" *ngSwitchCase="selectedForm.Select">
+        <app-select-changer [id]="selectedFormId"></app-select-changer>
+      </li>
+      <li class="form-control" *ngSwitchDefault>
+        <app-general-area-styles></app-general-area-styles>
+      </li>
+    </ul>
+  </div>
+
+  <div class="workingArea">
+    <h2>Build area</h2>
+    <div class="working-card"
+         (dblclick)="selectInputType(null,null)"
+         [ngStyle]=
+           "{'background': generalColorStyle$ | ngrxPush ,
+           'border-style': generalBorderStyle$ | ngrxPush}"
+         cdkDropList
+         #workList="cdkDropList"
+         [cdkDropListConnectedTo]="[fieldsList]"
+         [cdkDropListData]="formControls$ | ngrxPush"
+         (cdkDropListDropped)="drop($event)">
+      <div class="working-container" *ngFor="let item of formControls$ | ngrxPush">
+        <div class="input-form"
+             (click)="selectInputType(selectedForm.Input, item.id)"
+             *ngIf="item.inputType === 'input'">
+          <app-input-form
+            class="container"
+            [item]="item"></app-input-form>
+          <a (click)="deleteItem(item.id)">
+            <mat-icon>restore_from_trash</mat-icon>
+          </a>
+        </div>
+        <div class="input-form"
+             *ngIf="item.inputType === 'textarea'"
+             (click)="selectInputType(selectedForm.TextArea, item.id)">
+          <app-textarea-form
+            class="container"
+            [item]="item"></app-textarea-form>
+          <a (click)="deleteItem(item.id)">
+            <mat-icon>restore_from_trash</mat-icon>
+          </a>
+        </div>
+        <div
+          class="specific-elements-form"
+          *ngIf="item.inputType === 'button'"
+          (click)="selectInputType(selectedForm.Button, item.id)">
+          <app-button-form
+            [item]="item"></app-button-form>
+          <a (click)="deleteItem(item.id)">
+            <mat-icon>restore_from_trash</mat-icon>
+          </a>
+        </div>
+        <div
+          class="specific-elements-form"
+          (click)="selectInputType(selectedForm.Checkbox, item.id)"
+          *ngIf="item.inputType === 'checkbox'">
+          <app-checkbox-form [item]="item"></app-checkbox-form>
+          <a (click)="deleteItem(item.id)">
+            <mat-icon>restore_from_trash</mat-icon>
+          </a>
+        </div>
+        <div
+          class="specific-elements-form"
+          (click)="selectInputType(selectedForm.Select, item.id)"
+          *ngIf="item.inputType === 'select'">
+          <app-select-form [item]="item"></app-select-form>
+          <a (click)="deleteItem(item.id)">
+            <mat-icon>restore_from_trash</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Fields</h2>
+    <ul class="card"
+        cdkDropList
+        #fieldsList="cdkDropList"
+        [cdkDropListConnectedTo]="[workList]"
+        [cdkDropListData]="inputs$ | ngrxPush">
+      <li class="form-control-inputs">
+        <button mat-fab extended
+                cdkDrag
+                *ngFor="let input of inputs$ | ngrxPush">
+          <h3>{{input.name}}</h3>
+          <mat-icon>{{input.icon}}</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+</form>
+

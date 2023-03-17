@@ -1,0 +1,51 @@
+.checkbox-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.select-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+
+  select {
+    padding: 1rem 0 .3rem 0;
+    border: 0;
+  }
+}
+
+.button-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+
+  button {
+    max-width: 100%;
+    max-height: 200px;
+    width: 100px;
+    background-color: slateblue;
+    color: white;
+  }
+}
+.input-form {
+  min-width: 150px;
+  max-width: 580px;
+  width: 100%;
+
+  .input-full-width {
+    width: 100%;
+    margin-top: .4rem;
+
+    input {
+      padding: 2rem 0 .3rem 0;
+      border: 0;
+    }
+
+    textarea {
+      padding: .2rem;
+      width: 100%;
+      max-width: 90%;
+      max-height: 300px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<form class="input-form">
+  <mat-form-field class="input-full-width">
+    <mat-label>{{(inputStyle$ | ngrxPush)?.placeholder}}</mat-label>
+    <input
+      matInput
+      [ngStyle]="
+              {'font-size.px': (inputStyle$ | ngrxPush)?.fontSize,
+              'font-weight': (inputStyle$ | ngrxPush)?.fontWeight}"
+      type="{{item.inputType}}">
+  </mat-form-field>
+</form>
+

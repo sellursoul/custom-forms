@@ -1,0 +1,40 @@
+<form [formGroup]="inputChangerForm" (ngSubmit)="submit()">
+
+  <div class="options_form_component">
+    <mat-form-field>
+      <mat-label>Placeholder text:</mat-label>
+      <input matInput type="text" placeholder="Write placeholder" formControlName="placeholder">
+    </mat-form-field>
+  </div>
+
+  <div class="options_form_component">
+    <mat-form-field>
+      <mat-label>Font size:</mat-label>
+      <input matInput type="number" placeholder="Enter font size between 1 and 40" min="1" max="40" formControlName="fontSize">
+    </mat-form-field>
+    <div *ngIf="inputChangerForm.get('fontSize')?.invalid" class="validation">
+      <small *ngIf="inputChangerForm.get('fontSize')?.errors.max">Max font size: 40</small>
+      <small *ngIf="inputChangerForm.get('fontSize')?.errors.min">Min font size: 1</small>
+    </div>
+  </div>
+
+  <div class="options_form_component">
+    <mat-form-field appearance="fill">
+      <div><mat-label>Font weight:</mat-label></div>
+      <select matNativeControl formControlName="fontWeight">
+        <option value="normal">Normal</option>
+        <option value="bold">Bold</option>
+        <option value="lighter">Lighter</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div class="options_form_component">
+    <mat-slide-toggle formControlName="required">Required</mat-slide-toggle>
+  </div>
+
+  <div class="btn-block">
+    <button class="btn" type="submit">Change</button>
+  </div>
+
+</form>

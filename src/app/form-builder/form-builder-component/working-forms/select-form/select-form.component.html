@@ -1,0 +1,11 @@
+<form class="select-form">
+  <mat-form-field appearance="fill">
+    <mat-label
+      [ngStyle]="{'font-weight': (selectStyle$ | ngrxPush)?.fontWeight}">{{(selectStyle$ | ngrxPush)?.placeholder}}</mat-label>
+    <select type="{{item.inputType}}" [ngStyle]="{'font-weight': (selectStyle$ | ngrxPush)?.fontWeight}" matNativeControl>
+      <option value="1">{{(selectStyle$ | ngrxPush)?.firstOptionPlaceholder}}</option>
+      <option value="2">{{(selectStyle$ | ngrxPush)?.secondOptionPlaceholder}}</option>
+      <option value="3">{{(selectStyle$ | ngrxPush)?.thirdOptionPlaceholder}}</option>
+    </select>
+  </mat-form-field>
+</form>

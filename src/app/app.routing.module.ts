@@ -1,28 +1,27 @@
 import {NgModule} from "@angular/core";
-import {PreloadAllModules, RouterModule, Routes} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {HomePageComponent} from "./home-page/home-page.component";
-import {LoginPageComponent} from "./login-page/login-page.component";
 import {MainLayoutComponent} from "./shared/main-layout/main-layout.component";
-import {CreateAccountPageComponent} from "./login-page/create-account-page/create-account-page.component";
+import {FormBuilderComponent} from "./form-builder/form-builder-component/form-builder.component";
+import {AuthGuard} from "./auth/services/auth.guard";
 
 const routes: Routes = [
-  {path:'', component: MainLayoutComponent, children:[
+  {
+    path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: '/', pathMatch: 'full'},
-      {path: '', component: HomePageComponent}
-    ]},
-  {path: 'authorized',
-    loadChildren: () => import('./authorized/authorized.module').then(m => m.AuthorizedModule)},
-  {path: 'login', component: LoginPageComponent},
-  {path: 'signup', component: CreateAccountPageComponent},
-  {path: '**', redirectTo:'/'}
-]
+      {path: '', component: HomePageComponent},
+      {path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+      },
+      {path: 'formbuilder', component: FormBuilderComponent, canActivate: [AuthGuard]},
+      {path: '**', redirectTo: '/'}
+    ]
+  }]
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 
 export class AppRoutingModule {
-
 }

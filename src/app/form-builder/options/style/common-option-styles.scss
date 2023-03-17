@@ -1,0 +1,28 @@
+.btn-block {
+  margin-top: .8rem;
+  display: flex;
+  justify-content: flex-start;
+
+  .btn{
+    background-color: slateblue;
+    width: 150px;
+    height: 30px;
+    font-size: .8em;
+  }
+}
+input {
+  width: 100%;
+  padding: .4rem;
+  font-size: .8rem;
+  border: 1px solid #ccc;
+  margin-top: .4rem;
+}
+
+.options_form_component {
+  margin-bottom: 1rem;
+
+  select {
+    padding-top: .5rem;
+    padding-bottom: .3rem;
+  }
+}

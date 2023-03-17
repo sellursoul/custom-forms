@@ -1,0 +1,78 @@
+<form [formGroup]="buttonChangerForm" (ngSubmit)="submit()">
+
+  <div class="options_form_component">
+    <mat-form-field>
+      <mat-label>Placeholder text:</mat-label>
+      <input class="text_Input" matInput type="text" placeholder="Write placeholder" formControlName="placeholder">
+    </mat-form-field>
+  </div>
+
+  <div class="options_form_component">
+    <mat-form-field appearance="fill">
+      <mat-label>Font weight:</mat-label>
+      <select matNativeControl formControlName="fontWeight">
+        <option value="normal">Normal</option>
+        <option value="bold">Bold</option>
+        <option value="lighter">Lighter</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div class="options_form_component">
+    <mat-form-field>
+      <mat-label>Width:</mat-label>
+      <input class="text_Input" matInput type="number" min="50" max="500" placeholder="Set the width..." formControlName="width">
+    </mat-form-field>
+    <div *ngIf="buttonChangerForm.get('width')?.invalid" class="validation">
+      <small *ngIf="buttonChangerForm.get('width')?.errors.min">Min button width: 50px</small>
+      <small *ngIf="buttonChangerForm.get('width')?.errors.max">Max button width: 500px</small>
+    </div>
+  </div>
+
+  <div class="options_form_component">
+    <mat-form-field>
+      <mat-label>Height:</mat-label>
+      <input class="text_Input" matInput type="number"  min="50" max="200" placeholder="Set the height..." formControlName="height">
+    </mat-form-field>
+    <div *ngIf="buttonChangerForm.get('height')?.invalid" class="validation">
+      <small *ngIf="buttonChangerForm.get('height')?.errors.min">Min button height: 50px</small>
+      <small *ngIf="buttonChangerForm.get('height')?.errors.max">Max button height: 200px</small>
+    </div>
+  </div>
+
+  <div class="options_form_component">
+    <mat-form-field appearance="fill">
+      <mat-label>Border style:</mat-label>
+      <select matNativeControl formControlName="borderStyle">
+        <option value="none">None</option>
+        <option value="solid">Solid</option>
+        <option value="dashed">Dashed</option>
+        <option value="dotted">Dotted</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div class="options_form_component" formGroupName="color">
+    <h3>Button color:</h3>
+      <div>
+        <label for="red">Red:</label>
+        <input type="range" id="red" formControlName="red" min="0" max="255">
+        {{color.get('red').value}}
+      </div>
+      <div>
+        <label for="blue">Blue:</label>
+        <input type="range" id="blue" formControlName="blue" min="0" max="255">
+        {{color.get('blue').value}}
+      </div>
+      <div>
+        <label for="green">Green:</label>
+        <input type="range" id="green" formControlName="green" min="0" max="255">
+        {{color.get('green').value}}
+      </div>
+  </div>
+
+  <div class="btn-block">
+    <button class="btn" type="submit" [disabled]="buttonChangerForm.invalid">Change</button>
+  </div>
+
+</form>

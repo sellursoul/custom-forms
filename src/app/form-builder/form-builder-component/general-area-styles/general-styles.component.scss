@@ -1,0 +1,29 @@
+.form-control {
+  display: block;
+  color: #888;
+  margin-bottom: .8rem;
+  width: 100%;
+  padding: .5rem 1rem;
+  list-style: none;
+  user-select: none;
+  text-align: start;
+
+  select {
+    padding: 1rem 0 .3rem 0;
+    border: 0;
+  }
+}
+
+.btn-block {
+  margin-top: .8rem;
+  display: flex;
+  justify-content: flex-start;
+
+  .btn{
+    background-color: slateblue;
+    width: 150px;
+    height: 30px;
+    font-size: .8em;
+  }
+}
+

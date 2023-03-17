@@ -1,0 +1,110 @@
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .container {
+    width: 300px;
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+
+    .card {
+      padding: .5rem;
+      border: #ccc 2px solid;
+      margin: 0.7rem 0;
+      max-width: 100%;
+
+      .form-control {
+        display: block;
+        color: #888;
+        margin-bottom: .8rem;
+        width: 100%;
+        padding: .5rem 1rem;
+        list-style: none;
+        user-select: none;
+        text-align: start;
+      }
+
+      .form-control-inputs {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 0 2.5em;
+        margin-bottom: .8rem;
+        width: 100%;
+
+        button {
+          margin-top: 2rem;
+          width: 200px;
+          background-color: slateblue;
+          color: white;
+        }
+
+        button:nth-child(1) {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  .workingArea {
+    min-width: 600px;
+    margin: 0 10px 0 10px;
+    text-align: center;
+    display: inline-block;
+
+    .working-card {
+      width: 100%;
+      min-height: 300px;
+      border: 2px dotted #ccc;
+      margin-top: 4px;
+      padding-bottom: 1rem;
+    }
+
+    .working-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      max-width: 600px;
+
+      .input-form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        min-width: 150px;
+        max-width: 580px;
+          .container {
+            width: 100%;
+          }
+        a {
+          margin-top: 1rem;
+          margin-left: .1rem;
+          padding-right: .4rem;
+          color: slateblue;
+          cursor: pointer;
+        }
+      }
+      .specific-elements-form {
+        display: flex;
+        justify-content: center;
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+
+        a {
+          margin-top: .5rem;
+          margin-left: .5rem;
+          color: slateblue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
