@@ -16,7 +16,7 @@ export class InputFormComponent implements OnInit {
 
   inputStyle$: Observable<inputStyles>
 
-  constructor(private store: Store<State>, public dialog: MatDialog) {
+  constructor(private store: Store<State>) {
   }
 
   ngOnInit() {

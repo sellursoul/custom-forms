@@ -34,7 +34,7 @@ export class InputChangerComponent implements OnInit {
           placeholder: this.inputChangerForm.value.placeholder,
           fontSize: this.inputChangerForm.value.fontSize,
           fontWeight: this.inputChangerForm.value.fontWeight,
-          required: this.inputChangerForm.value.fontWeight
+          required: this.inputChangerForm.value.required
         }
       }
       this.store.dispatch(setFormStyles({input}))

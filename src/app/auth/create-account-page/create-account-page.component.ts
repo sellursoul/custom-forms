@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
 import {Store} from "@ngrx/store";
 import {State} from "../../store";
 import {signUpStart} from "../state/auth.actions";
 import {setLoadingSpinner} from "../../store/shared/shared.actions";
-import {AuthService} from "../services/auth.service";
 import {Observable} from "rxjs";
 import {getErrorMessage} from "../../store/shared/shared.selector";
 
@@ -20,8 +18,6 @@ export class CreateAccountPageComponent implements OnInit {
   errorMessage$: Observable<string>
 
   constructor(
-    public auth: AuthService,
-    private router: Router,
     private formBuilder: FormBuilder,
     private store: Store<State>
   ) {}
@@ -37,6 +33,27 @@ export class CreateAccountPageComponent implements OnInit {
       {
         validator: this.matchValidator('password', 'repeatPassword')
       })
+  }
+
+  getEmailErrorMessage() {
+    if (this.signUpForm.get('email').hasError('required')) {
+      return 'Please, enter email';
+    }
+    return this.signUpForm.get('email').hasError('email') ? 'Please, enter correct email' : '';
+  }
+
+  getPasswordErrorMessage() {
+    if (this.signUpForm.get('password').hasError('required')) {
+      return 'Please, enter password';
+    }
+    return this.signUpForm.get('password').hasError('minlength') ? `Minimal password length 8 symbols` : '';
+  }
+
+  getRepeatPasswordErrorMessage() {
+    if (this.signUpForm.get('repeatPassword').hasError('required')) {
+      return 'Please, repeat password';
+    }
+    return this.signUpForm.get('repeatPassword').hasError('matchValidator') ? 'Passwords don`t match' : '';
   }
 
   submit() {

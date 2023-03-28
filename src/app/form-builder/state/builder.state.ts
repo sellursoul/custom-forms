@@ -40,8 +40,7 @@ export const initialState: BuilderState = {
         fontWeight: 'normal',
         borderStyle: 'none',
         width: 100,
-        height: 50,
-        required: false
+        height: 50
       }},
     {id: 5, name: "Select", inputType: InputTypes.Select, icon: "view_headline",
       selectStyles: {

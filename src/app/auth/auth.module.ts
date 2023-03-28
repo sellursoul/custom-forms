@@ -9,6 +9,10 @@ import {StoreModule} from "@ngrx/store";
 import {AUTH_STATE_NAME} from "./state/auth.selector";
 import {AuthReducer} from "./state/auth.reducer";
 import {PushModule} from "@ngrx/component";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
 
 const routes: Routes = [
   {
@@ -31,7 +35,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature(AUTH_STATE_NAME, AuthReducer),
-    PushModule
+    PushModule, MatFormFieldModule, MatIconModule, MatButtonModule, MatInputModule
   ],
   exports: [RouterModule],
   providers:[]

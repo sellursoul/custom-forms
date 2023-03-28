@@ -29,16 +29,30 @@ form {
 
       .form-control-inputs {
         display: flex;
+        align-items: center;
         flex-direction: column;
-        padding: 0 0 0 2.5em;
+        padding: 0;
         margin-bottom: .8rem;
         width: 100%;
 
         button {
+          display: flex;
+          justify-content: center;
           margin-top: 2rem;
-          width: 200px;
+          width: 80%;
+          border-radius: 20px;
           background-color: slateblue;
           color: white;
+          border: 0;
+
+          mat-icon{
+            margin: .7rem 0 0 .5rem;
+          }
+        }
+
+        button:hover {
+          cursor: pointer;
+          opacity: 0.9;
         }
 
         button:nth-child(1) {
@@ -74,9 +88,11 @@ form {
         width: 100%;
         min-width: 150px;
         max-width: 580px;
-          .container {
-            width: 100%;
-          }
+
+        .container {
+          width: 100%;
+        }
+
         a {
           margin-top: 1rem;
           margin-left: .1rem;
@@ -85,6 +101,7 @@ form {
           cursor: pointer;
         }
       }
+
       .specific-elements-form {
         display: flex;
         justify-content: center;

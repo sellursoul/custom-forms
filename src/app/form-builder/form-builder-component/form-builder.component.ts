@@ -1,7 +1,7 @@
 import {Component,OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {State} from "../../store";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {Form} from '../state/shared/builder.interfaces';
 import {
@@ -41,7 +41,6 @@ export class FormBuilderComponent implements OnInit {
   }
 
   selectInputType(type: InputTypes, id: number) {
-    debugger;
     this.value = type
     this.selectedFormId = id
   }
@@ -59,6 +58,5 @@ export class FormBuilderComponent implements OnInit {
       const input = Object.assign({}, event.previousContainer.data[event.previousIndex]);
       this.store.dispatch(addForm({input}))
     }
-    debugger;
   }
 }

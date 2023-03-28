@@ -34,7 +34,7 @@ export class TextareaChangerComponent implements OnInit {
           placeholder: this.textAreaChangerForm.value.placeholder,
           fontSize: this.textAreaChangerForm.value.fontSize,
           fontWeight: this.textAreaChangerForm.value.fontWeight,
-          required: this.textAreaChangerForm.value.fontWeight
+          required: this.textAreaChangerForm.value.required
         }
       }
       this.store.dispatch(setFormStyles({input}))

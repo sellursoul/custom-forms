@@ -5,7 +5,6 @@ import {Store} from "@ngrx/store";
 import {State} from "../../store";
 import {Observable} from "rxjs";
 import {autoLogin, logout} from "../../auth/state/auth.actions";
-import {getLoading} from "../../store/shared/shared.selector";
 
 @Component({
   selector: 'app-main-layout',

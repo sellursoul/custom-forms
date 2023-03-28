@@ -26,6 +26,7 @@ import {ButtonFormComponent} from './form-builder-component/working-forms/button
 import {SelectFormComponent} from './form-builder-component/working-forms/select-form/select-form.component';
 import {CheckboxFormComponent} from './form-builder-component/working-forms/checkbox-form/checkbox-form.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     ReactiveFormsModule,
     StoreModule.forFeature(BUILDER_STATE_NAME, BuilderReducer),
     PushModule,
+    MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     CdkDrag,

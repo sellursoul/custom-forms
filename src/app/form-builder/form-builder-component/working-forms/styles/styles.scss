@@ -29,7 +29,7 @@
 }
 .input-form {
   min-width: 150px;
-  max-width: 580px;
+  max-width: 550px;
   width: 100%;
 
   .input-full-width {
@@ -37,14 +37,13 @@
     margin-top: .4rem;
 
     input {
-      padding: 2rem 0 .3rem 0;
       border: 0;
     }
 
     textarea {
       padding: .2rem;
       width: 100%;
-      max-width: 90%;
+      max-width: 100%;
       max-height: 300px;
     }
   }

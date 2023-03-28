@@ -12,6 +12,7 @@ import { selectSelectStyle } from 'src/app/form-builder/state/builder.selectors'
 })
 export class SelectFormComponent implements OnInit{
   @Input() item: Form
+
   selectStyle$: Observable<selectStyles>
 
   constructor(private store: Store<State>) {

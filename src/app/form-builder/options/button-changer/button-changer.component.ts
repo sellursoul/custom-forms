@@ -11,7 +11,7 @@ import {setFormStyles} from "../../state/builder.actions";
 })
 export class ButtonChangerComponent implements OnInit {
 
-  @Input () id:number
+  @Input () id: number
 
   buttonChangerForm: FormGroup
 
@@ -29,7 +29,7 @@ export class ButtonChangerComponent implements OnInit {
         red: (106),
         blue: (205),
         green: (90),
-      }),
+      })
     })
   }
 
@@ -47,8 +47,7 @@ export class ButtonChangerComponent implements OnInit {
           height: this.buttonChangerForm.value.height,
           color: this.buttonChangerForm.value.color,
           borderStyle: this.buttonChangerForm.value.borderStyle,
-          fontWeight: this.buttonChangerForm.value.fontWeight,
-          required: this.buttonChangerForm.value.fontWeight
+          fontWeight: this.buttonChangerForm.value.fontWeight
         }
       }
       this.store.dispatch(setFormStyles({input}))

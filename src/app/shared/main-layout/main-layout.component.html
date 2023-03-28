@@ -3,10 +3,10 @@
     <a [routerLink]="['/']">Form builder App</a>
   </h1>
   <ul>
-    <li routerLinkActive="active"><a [routerLink]="['/formbuilder']"> Form builder</a></li>
-    <li><a class="" *ngIf="!(isAuthenticated$ | ngrxPush)" [routerLink]="['/auth', 'signup']">Sign up</a></li>
-    <li><a class="" *ngIf="!(isAuthenticated$ | ngrxPush)" [routerLink]="['/auth', 'login']">Login</a></li>
-    <li><a href="#" *ngIf="isAuthenticated$ | ngrxPush" (click)="logout($event)">Logout</a></li>
+    <li routerLinkActive="active"><a class="form_builder" [routerLink]="['/formbuilder']"> Form builder</a></li>
+    <li><a class="sign_up" *ngIf="!(isAuthenticated$ | ngrxPush)" [routerLink]="['/auth', 'signup']">Sign up</a></li>
+    <li><a class="log_in" *ngIf="!(isAuthenticated$ | ngrxPush)" [routerLink]="['/auth', 'login']">Login</a></li>
+    <li><a class="log_out" *ngIf="isAuthenticated$ | ngrxPush" (click)="logout($event)">Logout</a></li>
   </ul>
 </nav>
 

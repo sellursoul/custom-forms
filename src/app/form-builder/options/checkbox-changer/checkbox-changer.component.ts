@@ -32,7 +32,7 @@ export class CheckboxChangerComponent implements OnInit {
         checkboxStyles: {
           placeholder: this.checkBoxChangerForm.value.placeholder,
           fontWeight: this.checkBoxChangerForm.value.fontWeight,
-          required: this.checkBoxChangerForm.value.fontWeight
+          required: this.checkBoxChangerForm.value.required
         }
       }
       this.store.dispatch(setFormStyles({input}))
